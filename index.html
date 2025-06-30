@@ -1596,6 +1596,17 @@
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target && target.classList.contains('hidden')) {
+            target.classList.remove('hidden');
+            target.classList.add('show');
+        }
+    });
+});
+
 
         // Fechar menu ao clicar em um link
         document.querySelectorAll('.nav-links a').forEach(link => {
